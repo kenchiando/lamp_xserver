@@ -1,0 +1,35 @@
+version: "3"
+services:
+    webserver:
+        build: ./bin/webserver
+        container_name: 'LAMPP_PHP7.4_apache'
+        ports: 
+            - 127.0.0.1:8888:80
+        volumes:
+            - ./htdocs:/var/www/html/
+        networks:
+            - default
+ 
+    mariadb:
+        build: ./bin/mysql
+        container_name: 'LAMPP_PHP7.4_mariadb'
+        ports:
+        - 127.0.0.1:3306:3306
+        environment:
+          MYSQL_ROOT_PASSWORD: password
+        volumes:
+            - ./bin/mysql/data:/var/lib/mysql
+            - ./bin/mysql/log:/var/log/mysql
+    phpmyadmin:
+        build: ./bin/phpmyadmin
+        container_name: 'LAMPP_PHP7.4_phpmyadmin'
+        links:
+            - mariadb
+        environment:
+            PMA_HOST: mariadb
+            PMA_PORT: 3306
+        ports:
+            - 127.0.0.1:8889:80
+        volumes:
+            #- /sessions
+            - ./bin/phpmyadmin/phpmyadmin-misc.ini:/usr/local/etc/php/conf.d/phpmyadmin-misc.ini
