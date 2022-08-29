@@ -1,6 +1,6 @@
-# MAMP for PHP7.4
+# LAMPP for PHP7.4
 
-MAMP PHP7.4の環境に近づけたDocker環境です。
+LAMPP PHP7.4の環境に近づけたDocker環境です。
 
 
 ## 導入方法
