@@ -1,0 +1,35 @@
+bin/mysql/data/*
+!bin/mysql/data/index.html
+bin/mysql/log/*
+!bin/mysql/log/index.html
+
+htdocs/*
+!htdocs/.htaccess
+!htdocs/info.php
+!htdocs/index.php
+
+.env.*.php
+.env.php
+.DS_Store
+._.DS_Store
+Thumbs.db
+log/*
+nbproject/*
+
+captcha/*
+phploy
+phploy.ini
+
+#/vendor/*
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
